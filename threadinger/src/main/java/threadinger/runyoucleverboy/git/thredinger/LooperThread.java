@@ -28,7 +28,8 @@ public class LooperThread {
             post(new PoisonPill());
             thread.join();
             thread = null;
-        } catch (InterruptedException ignored) {}
+        } catch (InterruptedException ignored) {
+        }
         return this;
     }
 
@@ -53,7 +54,7 @@ public class LooperThread {
 
     private synchronized void handleEarlyRunnables() {
         handler = new Handler();
-        for (EarlyRunnable runnable: earlyRunnables) {
+        for (EarlyRunnable runnable : earlyRunnables) {
             post(runnable.runnable, runnable.delay);
         }
     }

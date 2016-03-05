@@ -58,7 +58,7 @@ public class ThreadPool {
         }
     }
 
-    private class CommandWrapper<T> implements Callable<T>{
+    private class CommandWrapper<T> implements Callable<T> {
         private final Callable<T> command;
         private final String name;
 
